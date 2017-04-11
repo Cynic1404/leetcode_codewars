@@ -1,1 +1,1 @@
-# codewars_python
+My solutions for Codewars.com
