@@ -39,6 +39,7 @@ def isValid(s):
                 if s[_+1] == dict[s[_]]:
                     s.pop(_)
                     s.pop(_)
+                    break
         return False
 
 
