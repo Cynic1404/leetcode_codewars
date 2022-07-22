@@ -18,25 +18,41 @@
 #                     break
 #         return False
 
+#
+# def isValid(s):
+#     check_list = []
+#
+#     for _ in s:
+#         if len(check_list)==0 and s[0] in ["}", "]", ")"]:
+#             return False
+#         elif len(check_list) == 0:
+#             check_list.append(_)
+#         elif len(check_list) > 0:
+#             if _ == ")" and check_list[-1] == "(":
+#                 check_list.pop(-1)
+#             elif _ == "]" and check_list[-1] == "[":
+#                 check_list.pop(-1)
+#             elif _ == "}" and check_list[-1] == "{":
+#                 check_list.pop(-1)
+#             else:
+#                 check_list.append(_)
+#     return check_list==[]
+
 
 def isValid(s):
-    dict = {"(": ")", "[": "]", "{": "}"}
+    dict = {")": "(", "]": "[", "}": "{"}
     check_list = []
-
     for _ in s:
-        if len(check_list)==0 and s[0] in dict.values():
-            return False
-        elif len(check_list) == 0:
-            check_list.append(_)
-        elif len(check_list) > 0:
-            if _ == ")" and check_list[-1] == "(":
-                check_list.pop(-1)
-            elif _ == "]" and check_list[-1] == "[":
-                check_list.pop(-1)
-            elif _ == "}" and check_list[-1] == "{":
+        if _ in dict:
+            if len(check_list) > 0 and dict[_]==check_list[-1]:
                 check_list.pop(-1)
             else:
-                check_list.append(_)
-    return check_list==[]
+                return False
+        else:
+            check_list.append(_)
 
+    return check_list == []
+
+
+print(isValid("(){}}{"))
 print(isValid("()"))
