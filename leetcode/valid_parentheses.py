@@ -18,25 +18,23 @@
 #                     break
 #         return False
 
-#
+
 # def isValid(s):
+#     dict = {"(": ")", "[": "]", "{": "}"}
 #     check_list = []
-#
 #     for _ in s:
-#         if len(check_list)==0 and s[0] in ["}", "]", ")"]:
-#             return False
-#         elif len(check_list) == 0:
+#         if len(check_list) == 0 and _ in dict.keys():
 #             check_list.append(_)
+#         elif len(check_list) == 0 and _ in dict.values():
+#             return False
 #         elif len(check_list) > 0:
-#             if _ == ")" and check_list[-1] == "(":
+#             if dict[check_list[-1]] == _:
 #                 check_list.pop(-1)
-#             elif _ == "]" and check_list[-1] == "[":
-#                 check_list.pop(-1)
-#             elif _ == "}" and check_list[-1] == "{":
-#                 check_list.pop(-1)
+#             elif dict[check_list[-1]] != _ and _ in dict.values():
+#                 return False
 #             else:
 #                 check_list.append(_)
-#     return check_list==[]
+#     return check_list == []
 
 
 def isValid(s):
@@ -54,5 +52,5 @@ def isValid(s):
     return check_list == []
 
 
-print(isValid("(){}}{"))
+print(isValid("([)]"))
 print(isValid("()"))
