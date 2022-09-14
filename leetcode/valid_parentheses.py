@@ -36,34 +36,33 @@
 #                 check_list.append(_)
 #     return check_list == []
 
-def isValid(s):
-    dict = {"(": ")", "[": "]", "{": "}"}
-    check_list = []
-    for _ in s:
-        if len(check_list) == 0 and _ not in dict.keys():
-            return False
-        elif len(check_list) > 0 and dict[check_list[-1]] == _:
-            check_list.pop(-1)
-        elif len(check_list) > 0 and dict[check_list[-1]] != _ and _ not in dict.keys():
-            return False
-        else:
-            check_list.append(_)
-    return check_list == []
-
-
-
 # def isValid(s):
-#     dict = {")": "(", "]": "[", "}": "{"}
+#     dict = {"(": ")", "[": "]", "{": "}"}
 #     check_list = []
 #     for _ in s:
-#         if _ in dict:
-#             if len(check_list) > 0 and dict[_]==check_list[-1]:
-#                 check_list.pop(-1)
-#             else:
-#                 return False
+#         if len(check_list) == 0 and _ not in dict.keys():
+#             return False
+#         elif len(check_list) > 0 and dict[check_list[-1]] == _:
+#             check_list.pop(-1)
+#         elif len(check_list) > 0 and dict[check_list[-1]] != _ and _ not in dict.keys():
+#             return False
 #         else:
 #             check_list.append(_)
 #     return check_list == []
+
+
+def isValid(s):
+    dict = {")": "(", "]": "[", "}": "{"}
+    check_list = []
+    for _ in s:
+        if _ in dict:
+            if len(check_list) > 0 and check_list[-1] == dict[_]:
+                check_list.pop()
+            else:
+                return False
+        else:
+            check_list.append(_)
+    return check_list == []
 
 
 
