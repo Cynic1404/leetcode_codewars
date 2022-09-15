@@ -5,11 +5,23 @@
 #                 return True
 
 
+# def containsDuplicate(nums):
+#         stack = []
+#         for i in nums:
+#             if i in stack:
+#                 return True
+#             else:
+#                 stack.append(i)
+#         return False
+
 def containsDuplicate(nums):
-    nums.sort()
-    for i in range(len(nums)-1):
-        if nums[i] == nums[i+1]:
-            return True
+        hashset = set()
+        for i in nums:
+            if i in hashset:
+                return True
+            else:
+                hashset.add(i)
+        return False
 
 print(containsDuplicate([1,2,3,1]))
 
