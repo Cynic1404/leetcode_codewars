@@ -1,21 +1,17 @@
 def isValid(s):
     d = {")": '(', "]": "[", "}": "{"}
-    parentheses = []
-    if len(s)==1:
-        return False
+    stack = []
     for character in s:
         if character in d:
-            if len(parentheses)==0:
-                return False
-            last_element = parentheses.pop()
-            if d[character] != last_element:
-                return False
+            if len(stack)>0 and stack[-1]==d[character]:
+                stack.pop()
             else:
-                continue
+                return False
         else:
-            parentheses.append(character)
-    if len(parentheses)!=0:
-        return True
+            stack.append(character)
+    return stack==[]
+
+
 
 #bad solution
 # def isValid(s):
@@ -48,4 +44,4 @@ def isValid(s):
 
 
 
-print(isValid("(("))
+print(isValid("[(){}]"))
