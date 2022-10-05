@@ -12,6 +12,19 @@ def isValid(s):
     return stack==[]
 
 
+# def isValid(s):
+#     dict = {"(": ")", "[": "]", "{": "}"}
+#     check_list = []
+#     for _ in s:
+#         if len(check_list) == 0 and _ not in dict:
+#             return False
+#         elif len(check_list) > 0 and dict[check_list[-1]] == _:
+#             check_list.pop(-1)
+#         elif len(check_list) > 0 and dict[check_list[-1]] != _ and _ not in dict:
+#             return False
+#         else:
+#             check_list.append(_)
+#     return check_list == []
 
 #bad solution
 # def isValid(s):
