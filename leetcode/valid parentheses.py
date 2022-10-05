@@ -19,7 +19,7 @@ def isValid(s):
 #         if len(check_list) == 0 and _ not in dict:
 #             return False
 #         elif len(check_list) > 0 and dict[check_list[-1]] == _:
-#             check_list.pop(-1)
+#             check_list.pop()
 #         elif len(check_list) > 0 and dict[check_list[-1]] != _ and _ not in dict:
 #             return False
 #         else:
