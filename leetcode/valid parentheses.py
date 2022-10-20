@@ -11,6 +11,25 @@ def isValid(s):
             stack.append(character)
     return stack==[]
 
+# def isValid(s):
+#     parentheses = {"{": "}", "(": ")", "[": "]"}
+#     if len(s) < 2:
+#         return False
+#     a = list()
+#     for el in s:
+#         if el in parentheses:
+#             a.append(el)
+#         elif el not in parentheses:
+#             if not len(a):
+#                 return False
+#             else:
+#                 if parentheses[a[-1]] == el:
+#                     a.pop()
+#                 else:
+#                     return False
+#
+#     return a == []
+
 
 # def isValid(s):
 #     dict = {"(": ")", "[": "]", "{": "}"}
