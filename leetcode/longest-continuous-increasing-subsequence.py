@@ -1,4 +1,16 @@
-
+def findLengthOfLCIS(nums):
+    if len(nums) == 1:
+        return 1
+    max_len = 0
+    count = 1
+    for i in range(len(nums) - 1):
+        if nums[i + 1] > nums[i]:
+            count += 1
+            max_len = max(count, max_len)
+        else:
+            count = 1
+            max_len = max(count, max_len)
+    return max_len
 
 # extra requirement!!!!!
 #the sequence should increase evenly!!!!
