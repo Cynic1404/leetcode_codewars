@@ -42,9 +42,13 @@ if all([i > 5 for i in nums]):
 if any([i % 2 == 0 for i in nums]):
     print("At least one is even")
 
-for v in enumerate(nums):
-    print(v)
-
+for i, m in enumerate(nums):
+    print(i,m)
+# 0 55
+# 1 44
+# 2 33
+# 3 22
+# 4 11
 
 
 
