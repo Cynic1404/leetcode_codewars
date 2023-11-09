@@ -19,6 +19,28 @@ print(maxProfit([7,1,5,3,6,4]))
 # to return day's indexes
 
 # def maxProfit(prices):
+#     if not prices or len(prices) == 1:
+#         return 0, 0, 0  # No profit if only one day or empty array
+#
+#     min_price_idx = 0
+#     max_profit = 0
+#     buy_day = 0
+#     sell_day = 0
+#
+#     for i in range(1, len(prices)):
+#        if prices[i]<prices[min_price_idx]:
+#            min_price_idx=i
+#        else:
+#             current_profit = prices[i]-prices[min_price_idx]
+#             if current_profit>max_profit:
+#                 max_profit=current_profit
+#                 buy_day=min_price_idx
+#                 sell_day=i
+#
+#
+#     return max_profit, buy_day, sell_day
+
+# def maxProfit(prices):
 #     if len(prices) > 1:
 #         res=[]
 #         day_to_buy = 0
