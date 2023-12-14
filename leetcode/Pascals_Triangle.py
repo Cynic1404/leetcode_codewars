@@ -12,8 +12,5 @@ def pascals_triangle(numRows):
                 new.append(top[i] + top[i + 1])
             triangle.append([1] + new + [1])
     return triangle
-    # for i in triangle:
-    #     for v in i:
-    #         print(v*"*")
 print(pascals_triangle(10))
 
