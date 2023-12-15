@@ -50,8 +50,9 @@ for i, m in enumerate(nums):
 # 3 22
 # 4 11
 
-
-
+a = [1,2,3]
+b=[4,5]
+a.extend(b) # [1,2,3,4,5]
 
 #### map/filter
 
