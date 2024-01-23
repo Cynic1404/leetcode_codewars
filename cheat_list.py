@@ -29,11 +29,6 @@ b = (lambda x: 4+x)
 print(b(6) == 10)
 
 
-
-
-
-
-
 ######### lists
 nums = [55, 44, 33, 22, 11]
 if all([i > 5 for i in nums]):
@@ -103,3 +98,17 @@ for v, c in a:
 # 1 2
 # 3 4
 # 5 6
+
+
+############ unpacking
+
+def three(a,b,c):
+    return a*b+c
+
+z = [2,3,4]
+print(three(*z))
+#10
+
+d = {"c":4, "a":5, "b":3}
+print(three(**d))
+#19
