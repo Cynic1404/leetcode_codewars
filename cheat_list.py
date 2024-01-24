@@ -109,6 +109,24 @@ z = [2,3,4]
 print(three(*z))
 #10
 
+def f(*args):
+    print("Positional:", args)
+f(100, 50, 25)
+#Positional: (100, 50, 25)
+
+def f(**kwargs):
+    print("Named:", kwargs)
+f(galleons=100, sickles=50, knuts=25)
+#Named: {'galleons': 100, 'sickles': 50, 'knuts': 25}
+
 d = {"c":4, "a":5, "b":3}
 print(three(**d))
 #19
+
+
+#########
+#dict_comprehension
+students = ["Bob", "John", "Carry"]
+students_dict = {student: "Chemistry" for student in students}
+print(students_dict)
+#{'Bob': 'Chemistry', 'John': 'Chemistry', 'Carry': 'Chemistry'}
