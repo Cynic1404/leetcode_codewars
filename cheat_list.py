@@ -130,3 +130,28 @@ students = ["Bob", "John", "Carry"]
 students_dict = {student: "Chemistry" for student in students}
 print(students_dict)
 #{'Bob': 'Chemistry', 'John': 'Chemistry', 'Carry': 'Chemistry'}
+
+
+
+######## setters and getters
+class Human:
+    def __init__(self, name, sex):
+        self.name = name
+        self.sex = sex
+
+    def __str__(self):
+        return f"{self.name}"
+
+    @property
+    def sex(self):
+        return self._sex
+
+    @sex.setter
+    def sex(self, sex):
+        if sex not in ['male', 'female']:
+            raise ValueError
+        self._sex = sex
+
+
+misha = Human("Mishka", "h")
+
