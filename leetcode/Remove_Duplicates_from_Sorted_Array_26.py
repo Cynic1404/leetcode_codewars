@@ -1,12 +1,13 @@
 
 def removeDuplicates(nums):
-    o = 0
-    while o+1 < len(nums):
-        if nums[o] == nums[o+1]:
-            del nums[o+1]
-        else:
-            o+=1
-    return len(nums)
+    k = 0
+    checked = set()
+    for i in range(len(nums)):
+        if nums[i] not in checked:
+            checked.add(nums[i])
+            nums[k] = nums[i]
+            k += 1
+    return k
 
 
 assert removeDuplicates([1,2,3,4,5]) == 5
