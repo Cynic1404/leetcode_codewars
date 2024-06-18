@@ -16,13 +16,12 @@
 #     return letter_found == len(s)
 
 def isSubsequence(s, t):
-    i,j = 0,0
-    while i<len(s) and j<len(t):
-        if s[i]==t[j]:
-            i+=1
-        j+=1
-    if i == len(s):
-        return True
+    x, y = 0, 0
+    while x < len(s) and y < len(t):
+        if s[x] == t[y]:
+            x += 1
+        y += 1
+    return x == len(s)
 
 print(isSubsequence('acb', 'vahbgdcb'))
 
