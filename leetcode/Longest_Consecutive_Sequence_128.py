@@ -11,20 +11,36 @@ def longestConsecutive(nums):
     longest = 0  # To keep track of the longest sequence found
     counter = 1  # To count the current sequence length
 
-    # Iterate through the sorted list starting from the second element
-    for i in range(1, len(nums)):
-        # If the current element is exactly one more than the previous element
-        if nums[i] - nums[i - 1] == 1:
-            counter += 1  # Increment the counter for the current sequence
-        # If the current element is the same as the previous element, do nothing
-        elif nums[i] != nums[i - 1]:
-            # Update the longest sequence length if the current sequence is longer
-            longest = max(longest, counter)
-            # Reset the counter for the new sequence
-            counter = 1
 
-    # After the loop, check the last sequence
-    return max(longest, counter)
+    for i in range(1, len(nums)):    # Iterate through the sorted list starting from the second element
+        if nums[i] - nums[i - 1] == 1: # If the current element is exactly one more than the previous element
+            counter += 1  # Increment the counter for the current sequence
+        elif nums[i] != nums[i - 1]: # If the current element is the same as the previous element, do nothing
+            longest = max(longest, counter) # Update the longest sequence length if the current sequence is longer
+            counter = 1 # Reset the counter for the new sequence
+    return max(longest, counter)     # After the loop, check the last sequence
+
+
+# fastest
+def longestConsecutive(nums):
+    if not nums:  # Check if the list is empty
+        return 0  # Return 0 if the list is empty
+
+    longest = 0  # Initialize the longest sequence length
+    nums = set(nums)  # Convert the list to a set for O(1) average-time complexity checks
+
+    for num in nums:  # Iterate through each number in the set
+        if num - 1 not in nums:  # Check if the current number is the start of a sequence
+            streak = 1  # Initialize the current sequence length
+            current_num = num  # Initialize the current number in the sequence
+
+            while current_num + 1 in nums:  # Continue the sequence as long as the next number is in the set
+                current_num += 1  # Move to the next number
+                streak += 1  # Increment the sequence length
+
+            longest = max(longest, streak)  # Update the longest sequence length if the current sequence is longer
+
+    return longest  # Return the length of the longest consecutive sequence
 
 
 

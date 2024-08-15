@@ -1,14 +1,11 @@
 def groupAnagrams(strs):
-    d = {}
-    res = []
-    for i in range(len(strs)):
-        a = ''.join(sorted(list(strs[i])))
-        if a not in d:
-            d[a]=[strs[i]]
+    res = {}
+    for string in strs:
+        key = ''.join(sorted(string))
+        if key not in res:
+            res[key] = [string]
         else:
-            d[a]=d[a]+[strs[i]]
-    for i in d:
-        res.append(d[i])
-    return res
+            res[key].append(string)
+    return list(res.values())
 
 print(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
