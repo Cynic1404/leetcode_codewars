@@ -7,11 +7,11 @@ def two_sum_bruteforce(nums, target):
 
 def two_sum_fast(nums, target):
     new_dict = {}
-    for _ in range(len(nums)):
-        if target-nums[_] not in new_dict:
-            new_dict[nums[_]] = _
+    for i in range(len(nums)):
+        if target-nums[i] not in new_dict:
+            new_dict[nums[i]] = i
         else:
-            return [new_dict[target-nums[_]], _]
+            return [new_dict[target-nums[i]], i]
 
 
 
