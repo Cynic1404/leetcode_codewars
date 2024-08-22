@@ -3,11 +3,9 @@ def rotate(matrix) -> None:
     Do not return anything, modify matrix in-place instead.
     """
     matrix.reverse()
-    index_to_replace = 1
     for i in range(len(matrix)):
-        for v in range(index_to_replace, len(matrix)):
+        for v in range(i+1, len(matrix)):
             matrix[i][v], matrix[v][i] = matrix[v][i], matrix[i][v]
-        index_to_replace += 1
 
     #for assertions only!!!
     return matrix
