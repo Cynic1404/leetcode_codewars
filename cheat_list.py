@@ -155,3 +155,36 @@ class Human:
 
 misha = Human("Mishka", "h")
 
+
+######## Super classes
+class Animal:
+    def __init__(self, name, species, age):
+        self.name = name
+        self.species = species
+        self.age = age
+
+    def describe(self):
+        return f"{self.name} is a {self.age}-year-old {self.species}."
+
+    def make_sound(self):
+        return f"{self.name} makes a generic animal sound."
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name, species="dog", age=0)  # Hardcoded defaults
+        self.breed = breed
+
+    def describe(self):
+        base = super().describe()  # Use Animal's describe
+        return f"{base} Breed: {self.breed}."
+
+    def bark(self):
+        return f"{self.name} says: Woof!"
+
+# Create a Dog instance
+tom = Dog('Tom', "Basenji")
+
+# Use the methods
+print(tom.describe())     # From Dog, calls and extends Animal.describe()
+print(tom.bark())         # Dog-specific method
+print(tom.make_sound())   # Inherited method from Animal
